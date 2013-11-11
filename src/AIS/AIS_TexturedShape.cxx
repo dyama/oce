@@ -201,10 +201,7 @@ void AIS_TexturedShape::UpdateAttributes()
     return;
   }
 
-  if (myPredefTexture != -1)
-    mytexture = new Graphic3d_Texture2Dmanual (myPredefTexture);
-  else
-    mytexture = new Graphic3d_Texture2Dmanual (myTextureFile.ToCString());
+  mytexture = new Graphic3d_Texture2Dmanual (myTextureFile.ToCString());
 
   myAspect->SetTextureMapOn();
 
@@ -342,10 +339,7 @@ void AIS_TexturedShape::Compute (const Handle(PrsMgr_PresentationManager3d)& /*t
       }
       myAspect->SetTextureMapOn();
 
-      if (myPredefTexture != -1)
-        mytexture = new Graphic3d_Texture2Dmanual (myPredefTexture);
-      else
-        mytexture = new Graphic3d_Texture2Dmanual (myTextureFile.ToCString());
+      mytexture = new Graphic3d_Texture2Dmanual (myTextureFile.ToCString());
 
       if (!mytexture->IsDone())
       {
